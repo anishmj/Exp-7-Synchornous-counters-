@@ -50,39 +50,73 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 
 
-### PROGRAM 
-/*
+# PROGRAM 
+~~~
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: ANISH MJ
+RegisterNumber:  212221230005
+~~~
+
+## UP COUNTER
+~~~
+module upcounter(clock,reset,up);
+input clock,reset;
+output reg[0:2] up;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+up=3'b 000;
+else
+up=up+1;
+end
+endmodule
+
+~~~
+## DOWN COUNTER
+~~~
+module DOWN(clock,reset,down);
+input clock,reset;
+output reg[2:0] down;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+down=3'b 111;
+else
+down=down-1;
+end
+endmodule
+
+~~~
+
+
+
+## RTL LOGIC UP COUNTER AND DOWN COUNTER  
+### UP COUNTER
+![A](UPC.jpg)
+
+### DOWN COUNTER
+![A](DOWNC.jpg)
+
+
+## TIMING DIGRAMS FOR COUNTER  
+### UP COUNTER
+![A](UPT.jpg)
+
+### DOWN COUNTER
+![A](DOWNT.jpg)
 
 
 
 
+## TRUTH TABLE 
 
+### UP COUNTER
+![A](UPTR.jpg)
 
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
-
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
+### DOWN COUNTER
+![S](DOWNTR.jpg)
 
 
 
-
-
-### TRUTH TABLE 
-
-
-
-
-
-
-### RESULTS 
+## RESULT 
+Thus 3 bit up and down counters is implemented and its functionality is validated.
